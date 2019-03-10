@@ -1,0 +1,36 @@
+// AtlServerLib.idl : IDL source for AtlServerLib
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (AtlServerLib.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(3B82AB48-438F-4624-B53B-5F878E783874),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICalculator : IDispatch{
+	[id(1), helpstring("Add x and y")] HRESULT Add([in] LONG x, [in] LONG y, [out, retval] LONG* rlt);
+	[id(2), helpstring("Sum from a to z")] HRESULT Sum([in] LONG a, [in] LONG z, [out, retval] LONG* rlt);
+};
+[
+	uuid(36252B31-F5FD-4215-A0C7-7E93A89CFE4C),
+	version(1.0),
+]
+library AtlServerLibLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(2E772C1F-A8AF-4284-B997-2DE10FCB07E8)		
+	]
+	coclass Calculator
+	{
+		[default] interface ICalculator;
+	};
+};
+
