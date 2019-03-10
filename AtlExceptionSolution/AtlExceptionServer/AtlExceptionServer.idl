@@ -1,0 +1,36 @@
+// AtlExceptionServer.idl : IDL source for AtlExceptionServer
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (AtlExceptionServer.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(041AB37C-7552-408F-ABBA-943F40D6E0BA),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICalculator : IDispatch{
+	[id(1), helpstring("Add x and y")] HRESULT Add([in] LONG x, [in] LONG y, [out, retval] LONG* rtl);
+	[id(2), helpstring("Divide x by y")] HRESULT Div([in] LONG x, [in] LONG y, [out, retval] LONG* rlt);
+};
+[
+	uuid(066C143B-5AAD-4F89-B40C-0BE483E66E11),
+	version(1.0),
+]
+library AtlExceptionServerLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(BCD8A8F5-49E2-4A81-A21B-58D1B0AD3CDF)		
+	]
+	coclass Calculator
+	{
+		[default] interface ICalculator;
+	};
+};
+

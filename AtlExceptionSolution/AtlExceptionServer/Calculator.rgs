@@ -1,0 +1,26 @@
+HKCR
+{
+	AtlExceptionServer.Calculator.1 = s 'Calculator Class'
+	{
+		CLSID = s '{BCD8A8F5-49E2-4A81-A21B-58D1B0AD3CDF}'
+	}
+	AtlExceptionServer.Calculator = s 'Calculator Class'
+	{		
+		CurVer = s 'AtlExceptionServer.Calculator.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {BCD8A8F5-49E2-4A81-A21B-58D1B0AD3CDF} = s 'Calculator Class'
+		{
+			ProgID = s 'AtlExceptionServer.Calculator.1'
+			VersionIndependentProgID = s 'AtlExceptionServer.Calculator'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{066C143B-5AAD-4F89-B40C-0BE483E66E11}'
+			Version = s '1.0'
+		}
+	}
+}

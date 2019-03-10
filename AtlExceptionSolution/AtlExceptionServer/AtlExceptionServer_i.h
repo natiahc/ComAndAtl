@@ -4,9 +4,9 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Sun Mar 10 18:49:25 2019
+/* at Sun Mar 10 19:20:47 2019
  */
-/* Compiler settings for AtlServerLib.idl:
+/* Compiler settings for AtlExceptionServer.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0603 
     protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
@@ -36,8 +36,8 @@
 #include "ole2.h"
 #endif /*COM_NO_WINDOWS_H*/
 
-#ifndef __AtlServerLib_i_h__
-#define __AtlServerLib_i_h__
+#ifndef __AtlExceptionServer_i_h__
+#define __AtlExceptionServer_i_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1020)
 #pragma once
@@ -84,18 +84,18 @@ EXTERN_C const IID IID_ICalculator;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("3B82AB48-438F-4624-B53B-5F878E783874")
+    MIDL_INTERFACE("041AB37C-7552-408F-ABBA-943F40D6E0BA")
     ICalculator : public IDispatch
     {
     public:
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE Add( 
             /* [in] */ LONG x,
             /* [in] */ LONG y,
-            /* [retval][out] */ LONG *rlt) = 0;
+            /* [retval][out] */ LONG *rtl) = 0;
         
-        virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE Sum( 
-            /* [in] */ LONG a,
-            /* [in] */ LONG z,
+        virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE Div( 
+            /* [in] */ LONG x,
+            /* [in] */ LONG y,
             /* [retval][out] */ LONG *rlt) = 0;
         
     };
@@ -160,12 +160,12 @@ EXTERN_C const IID IID_ICalculator;
             ICalculator * This,
             /* [in] */ LONG x,
             /* [in] */ LONG y,
-            /* [retval][out] */ LONG *rlt);
+            /* [retval][out] */ LONG *rtl);
         
-        /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *Sum )( 
+        /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *Div )( 
             ICalculator * This,
-            /* [in] */ LONG a,
-            /* [in] */ LONG z,
+            /* [in] */ LONG x,
+            /* [in] */ LONG y,
             /* [retval][out] */ LONG *rlt);
         
         END_INTERFACE
@@ -204,11 +204,11 @@ EXTERN_C const IID IID_ICalculator;
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
-#define ICalculator_Add(This,x,y,rlt)	\
-    ( (This)->lpVtbl -> Add(This,x,y,rlt) ) 
+#define ICalculator_Add(This,x,y,rtl)	\
+    ( (This)->lpVtbl -> Add(This,x,y,rtl) ) 
 
-#define ICalculator_Sum(This,a,z,rlt)	\
-    ( (This)->lpVtbl -> Sum(This,a,z,rlt) ) 
+#define ICalculator_Div(This,x,y,rlt)	\
+    ( (This)->lpVtbl -> Div(This,x,y,rlt) ) 
 
 #endif /* COBJMACROS */
 
@@ -222,23 +222,23 @@ EXTERN_C const IID IID_ICalculator;
 
 
 
-#ifndef __AtlServerLibLib_LIBRARY_DEFINED__
-#define __AtlServerLibLib_LIBRARY_DEFINED__
+#ifndef __AtlExceptionServerLib_LIBRARY_DEFINED__
+#define __AtlExceptionServerLib_LIBRARY_DEFINED__
 
-/* library AtlServerLibLib */
+/* library AtlExceptionServerLib */
 /* [version][uuid] */ 
 
 
-EXTERN_C const IID LIBID_AtlServerLibLib;
+EXTERN_C const IID LIBID_AtlExceptionServerLib;
 
 EXTERN_C const CLSID CLSID_Calculator;
 
 #ifdef __cplusplus
 
-class DECLSPEC_UUID("2E772C1F-A8AF-4284-B997-2DE10FCB07E8")
+class DECLSPEC_UUID("BCD8A8F5-49E2-4A81-A21B-58D1B0AD3CDF")
 Calculator;
 #endif
-#endif /* __AtlServerLibLib_LIBRARY_DEFINED__ */
+#endif /* __AtlExceptionServerLib_LIBRARY_DEFINED__ */
 
 /* Additional Prototypes for ALL interfaces */
 
